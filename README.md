@@ -45,6 +45,8 @@ The game is the the class that handles the user inputs, and manages the state of
 | `isAlive` | Set to `true` |
 
 ### Methods
+| Name | Notes |
+| --- | --- |
 | `feed(food);`|
 - Takes a `food` as a parameter
 - Adds the `food.energyValue` to the pet's `energyValue`
