@@ -15,9 +15,10 @@
                 new Activity("Walk", 50)
             ];
             this.gameOn = true;
+            this.gameClock;
         }
         runGame() {
-            let game = setInterval(() => {
+            this.gameClock = setInterval(() => {
                 if (this.pet.checkEnergy() !== 0 && this.pet.isAlive && this.gameOn) {
                     this.pet.energyLevel -= 10;
                     this.pet.funLevel -= 10;
@@ -27,7 +28,7 @@
                 } else {                              
                     this.pet.die();
                     this.gameOver();          
-                    clearInterval(game);
+                    clearInterval(this.gameClock);
                 }
             }, 10000);
         }
@@ -43,8 +44,6 @@
             this.updateEnergyLevel();
             this.updateFunLevel();
             this.updateHappinessLevel();
-            
-            
         }
         setupFood() {
             for (let food of this.food) {
@@ -73,10 +72,20 @@
             this.updateHappinessLevel();
         }
         updateHappinessLevel() {
+            let petImage = document.getElementById('pet-avatar');
             document.getElementById('happiness-level').innerText = this.pet.checkHappiness();
+
+            if (this.pet.checkHappiness() > 65) {
+                petImage.src = 'images/pet-happy.png';
+            } else if (this.pet.checkHappiness() < 65 && this.pet.checkHappiness() > 35) {
+                petImage.src = 'images/pet-bored.png';
+            } else if (this.pet.checkHappiness() < 35 && this.pet.checkHappiness() >= 0) {
+                petImage.src = 'images/pet-sad.png';
+            }
         }
         gameOver() {
             this.gameOn = false;
+            clearInterval(this.gameClock);
             alert("GAME OVER");
         }
     }
