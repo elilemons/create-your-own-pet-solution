@@ -36,63 +36,33 @@ The game is the the class that handles the user inputs, and manages the state of
 
 ## Class: `Pet`
 ### Properties
-
-- `name`
-- `hunger`
-  - Starts at 0
-- `boredom`
-  - Starts at 0
-- `happiness`
-  - Starts at 100
-- `isAlive`
-  - Is true until `die()` is called
+| Name | Notes |
+| ---   | --- |
+| `name` | The name of the pet the user entered |
+| `energyLevel` | The name of the user the user entered  |
+| `funLevel` |  Initialized with the `petName` and `userName` |
+| `happiness` | Initialized by user input |
+| `isAlive` | Set to `true` |
 
 ### Methods
 #### `feed(food);`
 - Takes a `food` as a parameter
-- TODO Write what this does
+- Adds the `food.energyValue` to the pet's `energyValue`
 #### `play();`
-- if `!isAlive`, do nothing. otherwise...
-- takes an `action` object as a parameter
-- TODO Write what this does
-### `checkHunger()`
-  - if `!isAlive`, do nothing. otherwise...
-  - if 0, `die()`
+- Takes an `activity` as a parameter
+- Adds the `activity.funValue` to the pet's `funLevel`
+### `checkEnergy()`
+  - returns the pet's `energyLevel`
 ### `checkBoredom()`
-  - if `!isAlive`, do nothing. otherwise...
-  - if 0, hunger decreases twice as fast?
+  - returns the pet's `funLevel
 #### `checkHappiness()`
-  - if `!isAlive`, do nothing. otherwise...
-  - Happiness is calculated with the following equation:
-  - `Math.floor((hunger + boredom) / 2))`
-  - `this.happiness` between 65 - 100 is `happy`
-  - `this.happiness` between 35 - 64 is `meh`
-  - `this.happiness` between 0 - 34 is `sad`
-  - if 0, `die()`
+  - returns `energyLevel + funLevel / 2`
 #### `die()`
   - sets `isAlive` to false
-
-```js
-function checkHappiness(i) {
-  if (i >= 65 && i <= 100) {
-      return "happy"
-  }
-  if (i >= 35 && i < 65) {
-      return "meh"
-  }
-  if (i >= 0 && i < 35 ) {
-      return "sad"
-  }
-}
-
-for (let i = 0; i <= 100; i++) {
-  console.log(checkHappiness(i));
-}
-```
-- `die()`
-  - Stops the timer
-- `makeNoise()`
+#### `die()`
+  - Sets `isAlive` to false
 
 ## Class `Food`
+
 ## Class `Activity`
 ## Class `Timer` (premade)
