@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+html { 
+    font-family: monospace; 
+    font-size: 18px;
+}
+.hide {
+    display: none !important; 
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-container.column {
+    flex-direction: column;
+}
+.flex-container.flex-start {
+    align-items: flex-start;
+}
+.pet-avatar {
+    width: 300px;
+    height: auto;
+}
+.pet-name {
+    font-weight: normal;
+}
+strong, .text-bold {
+    font-weight: bold;
+}
+.pet-name-label {
+    padding-right: .25em;
+}
+.input-container {
+    padding: 1em;
+    text-align: left;
+}
+.lead {
+    font-size: 1.25em;
+}
+.text-center {
+    text-align: center;
+}
