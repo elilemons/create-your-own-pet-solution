@@ -45,21 +45,21 @@ The game is the the class that handles the user inputs, and manages the state of
 | `isAlive` | Set to `true` |
 
 ### Methods
-#### `feed(food);`
+| `feed(food);`|
 - Takes a `food` as a parameter
 - Adds the `food.energyValue` to the pet's `energyValue`
-#### `play();`
+| `play();` |
 - Takes an `activity` as a parameter
 - Adds the `activity.funValue` to the pet's `funLevel`
-### `checkEnergy()`
+| `checkEnergy()` |
   - returns the pet's `energyLevel`
-### `checkBoredom()`
+| `checkBoredom()` |
   - returns the pet's `funLevel
-#### `checkHappiness()`
+| `checkHappiness()` |
   - returns `energyLevel + funLevel / 2`
-#### `die()`
+| `die()` |
   - sets `isAlive` to false
-#### `die()`
+| `die()` |
   - Sets `isAlive` to false
 
 ## Class `Food`
