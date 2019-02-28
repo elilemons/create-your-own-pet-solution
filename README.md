@@ -5,9 +5,11 @@ The game is the the class that handles the user inputs, and manages the state of
 ### Properties
 | Name | Notes |
 | ---   | --- |
-| `pet` |  Initialized with a `name` by user input |
+| `petName` | The name of the pet the user entered |
+| `userName` | The name of the user the user entered  |
+| `pet` |  Initialized with the `petName` and `userName` |
 | `userName` | Initialized by user input |
-|  `availableFood` | An `Array` of `Food` objects:
+|  `food` | An `Array` of `Food` objects:
 | |                 > `Apple(5)`|
 | |                 > `Spaghetti(50)`|
 | |                 > `Granola(25)` |
@@ -15,15 +17,21 @@ The game is the the class that handles the user inputs, and manages the state of
 | |                 > `Cuddle(5)`|
 | |                 > `Walk(50)`|
 | |                 > `Pet(25)` |
-| `isGameOver` | Game over is set to `true` if `!Pet.isAlive` or user quit |
+| gameOn | set = true |
+| gameClock | undefined |
 
 ### Methods
 | Name | Logic |
 | ---   | --- |
-| `startGame()` | creates new `Pet` with `pet.name` and `userName` |
-| `turn()` | ticks the `timer` clock |
-|  `run()` | keeps the `timer` running, checks `Pet.isAlive` and runs `quit()` when appropiate |
-| `quit()` | Game over is set to `true` if `!Pet.isAlive` or user quit |
+| `runGame()` | This has already been created |
+| `setupGame()` | creates new `Pet` with `pet.name` and `userName` |
+| `setupPet()` | sets up the relevant HTML for the pet |
+|  `setupFood()` | sets up the relevant HTML for the food |
+|  `setupActivities()` | sets up the relevant HTML for the Activities |
+|  `updateEnergyLevel()` | updates the relevant HTML for the pets energy level |
+|  `updateFunLevel()` | updates the relevant HTML for the Fun |
+|  `updateHappinessLevel()` | updates the relevant HTML for the Happiness |
+| `gameOver()` | GameOn is set to `false`, the interval is cleared, and the user is alerted the game is over|
 
 
 ## Class: `Pet`
